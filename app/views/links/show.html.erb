@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<div>
+  <span>
+    original url:
+  </span>
+  <span>
+    <%= link.original_url %>
+  </span>
+</div>
+<div>
+  <span>
+    short url:
+  </span>
+  <span>
+    <%= link.short_url %>
+  </span>
+</div>
+<div>
+  <span>
+    visitors count:
+  </span>
+  <span>
+    <%= link.ip_addresses.count %>
+  </span>
+</div>
+<%= link_to 'Back', links_path %>

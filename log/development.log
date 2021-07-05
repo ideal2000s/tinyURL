@@ -1,0 +1,1096 @@
+  [1m[35m (105.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (104.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (20.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1501799312444125800)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLinks (20210616124902)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (73.7ms)[0m  [1m[35mCREATE TABLE "links" ("id" bigserial primary key, "original_url" character varying, "short_url" character varying, "ip_addresses" character varying[] DEFAULT '{}', "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210616124902"]]
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-07-05 19:33:39.103655"], ["updated_at", "2021-07-05 19:33:39.103655"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1501799312444125800)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-07-05 15:34:20 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered links/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1985)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/xiaopeng/Documents/Test/Tiny-URL/public/packs
+[Webpacker] Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: ef270c56fa66020c9089
+Version: webpack 4.46.0
+Time: 1614ms
+Built at: 07/05/2021 3:34:23 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e88c6c3304a15e6886b6.js    124 KiB  application  [emitted] [immutable]  application
+js/application-e88c6c3304a15e6886b6.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e88c6c3304a15e6886b6.js js/application-e88c6c3304a15e6886b6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 2766ms (Views: 2758.3ms | ActiveRecord: 2.7ms | Allocations: 18656)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:34:26 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 12.4ms | Allocations: 4142)
+  Rendered links/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 4497)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 26.7ms | ActiveRecord: 3.7ms | Allocations: 11717)
+
+
+Started POST "/links" for ::1 at 2021-07-05 15:34:36 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"qzy6gNFbkae/B8nc2oJk5cckSgAC02JW+mzBj+0gGUqbzWwDQdxntlrPC5aBMkKQxx11Su9I9M/7k1KF7ac3QA==", "link"=>{"original_url"=>"asdf"}, "commit"=>"Create Link"}
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.5ms | Allocations: 548)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 636)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started GET "/asdf" for ::1 at 2021-07-05 15:34:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/asdf"):
+  
+actionpack (6.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/links" for ::1 at 2021-07-05 15:34:46 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered links/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 860)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 4127)
+
+
+Started GET "/" for ::1 at 2021-07-05 15:34:51 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered links/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 846)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 4081)
+
+
+Started GET "/" for ::1 at 2021-07-05 15:34:53 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered links/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 848)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 4081)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:35:38 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 2.9ms | Allocations: 388)
+  Rendered links/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 475)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.0ms | Allocations: 4106)
+
+
+Started POST "/links" for ::1 at 2021-07-05 15:35:42 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"ghiHBURBzxZe0K4MrUc6L4xVyhr//IHcX6Rjg1L2FVKy6VGG1MY5B7sYbEb29xxajGz1UBJnF0VeW/CJUnE7WA==", "link"=>{"original_url"=>"asdf"}, "commit"=>"Create Link"}
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.6ms | Allocations: 533)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 620)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4697)
+
+
+Started GET "/" for ::1 at 2021-07-05 15:38:08 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered links/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 840)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.4ms | Allocations: 4069)
+
+
+Started GET "/links" for ::1 at 2021-07-05 15:38:09 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered links/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 842)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 4071)
+
+
+Started GET "/" for ::1 at 2021-07-05 15:38:09 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered links/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 838)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.8ms | Allocations: 4066)
+
+
+Started GET "/" for ::1 at 2021-07-05 15:39:07 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered links/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 838)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 4061)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:39:08 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 0.7ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3692)
+
+
+Started POST "/links" for ::1 at 2021-07-05 15:40:00 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"+vRtlGnqDpCUKTIGWrmDPOpYM5rLxJyMtCWFluHtszTKBbsX+W34gXHh8EwBCaVJ6mEM0CZfChW12hac4WqdPg==", "link"=>{"original_url"=>"asdf"}, "commit"=>"Create Link"}
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.3ms | Allocations: 533)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 620)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4695)
+
+
+Started POST "/links" for ::1 at 2021-07-05 15:40:08 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"q1vyTYjkLSqwePWe17TqX8A7CtmjHAOyh7mC+Uh3xCHE5cnFujs9M258IEXrtwId9KSNOzgSJFEEZGn1DDYbaA==", "link"=>{"original_url"=>"asdff"}, "commit"=>"Create Link"}
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 0.9ms | Allocations: 533)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 620)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4665)
+
+
+Started GET "/links" for ::1 at 2021-07-05 15:41:19 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered links/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1822)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 15.8ms | ActiveRecord: 2.8ms | Allocations: 8836)
+
+
+Started GET "/" for ::1 at 2021-07-05 15:41:22 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered links/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 854)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 4090)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:41:28 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 4.4ms | Allocations: 2137)
+  Rendered links/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2492)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 13.6ms | ActiveRecord: 3.8ms | Allocations: 9711)
+
+
+Started POST "/links" for ::1 at 2021-07-05 15:41:40 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"PMBMdsEFpKeHKMuuABndWbBsrc30a//V9Z9UnSh4hPIMMZr1UYJStmLgCeRbqfsssFWShxnwaUz0YMeXKP+q+A==", "link"=>{"original_url"=>"testtest"}, "commit"=>"Create Link"}
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.1ms | Allocations: 548)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 636)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started POST "/links" for ::1 at 2021-07-05 15:42:09 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"HrmtDVF59zrBcj7GhO9YlEYfD5dI5nOhWu+cWlkMqJtxB5aFY6bnIx926x247LDWcoCIddPoVELZMndWHU130g==", "link"=>{"original_url"=>"https://testtest.com"}, "commit"=>"Create Link"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Create (0.7ms)[0m  [1m[32mINSERT INTO "links" ("original_url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["original_url", "https://testtest.com"], ["created_at", "2021-07-05 19:42:09.645736"], ["updated_at", "2021-07-05 19:42:09.645736"]]
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Update (0.7ms)[0m  [1m[33mUPDATE "links" SET "short_url" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["short_url", "b"], ["updated_at", "2021-07-05 19:42:09.649967"], ["id", 1]]
+  ↳ app/models/link.rb:9:in `create_short_url'
+  [1m[35m (35.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 49ms (ActiveRecord: 36.9ms | Allocations: 6362)
+
+
+Started GET "/links" for ::1 at 2021-07-05 15:42:09 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [1 times] (Duration: 1.0ms | Allocations: 273)
+  Rendered links/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1134)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 4374)
+
+
+Started GET "/testtest" for ::1 at 2021-07-05 15:42:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/testtest"):
+  
+actionpack (6.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/testtest.com" for ::1 at 2021-07-05 15:42:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/testtest.com"):
+  
+actionpack (6.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-07-05 15:42:29 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [1 times] (Duration: 0.4ms | Allocations: 117)
+  Rendered links/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 984)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.5ms | Allocations: 4265)
+
+
+Started GET "/links/b" for ::1 at 2021-07-05 15:42:35 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"b"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "b"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+  [1m[36mLink Update (0.7ms)[0m  [1m[33mUPDATE "links" SET "ip_addresses" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["ip_addresses", "{::1}"], ["updated_at", "2021-07-05 19:42:35.732893"], ["id", 1]]
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+  [1m[35m (18.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+Redirected to https://testtest.com
+Completed 302 Found in 33ms (ActiveRecord: 19.7ms | Allocations: 3296)
+
+
+Started GET "/links/b" for ::1 at 2021-07-05 15:42:37 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"b"}
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "b"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+Redirected to https://testtest.com
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms | Allocations: 988)
+
+
+Started GET "/links/b/info" for ::1 at 2021-07-05 15:42:58 -0400
+Processing by LinksController#show as HTML
+  Parameters: {"path"=>"b"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "b"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+  Rendering links/show.html.erb within layouts/application
+  Rendered links/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 262)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.3ms | Allocations: 4206)
+
+
+Started GET "/" for ::1 at 2021-07-05 15:43:24 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [1 times] (Duration: 2.5ms | Allocations: 119)
+  Rendered links/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 965)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.5ms | Allocations: 4195)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:43:26 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.6ms | Allocations: 389)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 476)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 3704)
+
+
+Started POST "/links" for ::1 at 2021-07-05 15:43:32 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"A1iloLOal4aGTXoBjpiy9F2BnnIPyGoyfQICKFvgHKczqXMjIx1hl2OFuEvVKJSBXbihOOJT/Kt8/ZEiW2cyrQ==", "link"=>{"original_url"=>"https://testtestxxx.com"}, "commit"=>"Create Link"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Create (0.5ms)[0m  [1m[32mINSERT INTO "links" ("original_url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["original_url", "https://testtestxxx.com"], ["created_at", "2021-07-05 19:43:32.754833"], ["updated_at", "2021-07-05 19:43:32.754833"]]
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Update (0.3ms)[0m  [1m[33mUPDATE "links" SET "short_url" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["short_url", "c"], ["updated_at", "2021-07-05 19:43:32.758102"], ["id", 2]]
+  ↳ app/models/link.rb:9:in `create_short_url'
+  [1m[35m (32.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 40ms (ActiveRecord: 33.6ms | Allocations: 3729)
+
+
+Started GET "/links" for ::1 at 2021-07-05 15:43:32 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [2 times] (Duration: 0.4ms | Allocations: 220)
+  Rendered links/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1075)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 4316)
+
+
+Started GET "/links/c/info" for ::1 at 2021-07-05 15:43:46 -0400
+Processing by LinksController#show as HTML
+  Parameters: {"path"=>"c"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "c"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+  Rendering links/show.html.erb within layouts/application
+  Rendered links/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 61)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 3860)
+
+
+Started GET "/links/c" for ::1 at 2021-07-05 15:43:50 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"c"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "c"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+  [1m[36mLink Update (1.0ms)[0m  [1m[33mUPDATE "links" SET "ip_addresses" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["ip_addresses", "{::1}"], ["updated_at", "2021-07-05 19:43:50.583640"], ["id", 2]]
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+Redirected to https://testtestxxx.com
+Completed 302 Found in 18ms (ActiveRecord: 11.2ms | Allocations: 3080)
+
+
+Started GET "/links/c" for ::1 at 2021-07-05 15:43:50 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"c"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "c"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+Redirected to https://testtestxxx.com
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 982)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:44:04 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.2ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 3684)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:48:31 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.4ms | Allocations: 703)
+  Rendered links/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1056)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 7.4ms | ActiveRecord: 3.9ms | Allocations: 9728)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:49:16 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.2ms | Allocations: 645)
+  Rendered links/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 992)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 5146)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:49:17 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.4ms | Allocations: 378)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 466)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3700)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:49:17 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 0.7ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 3685)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:49:17 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 0.8ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3690)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:13 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.2ms | Allocations: 646)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 993)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 5150)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:13 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 0.7ms | Allocations: 378)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 466)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3694)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:13 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 0.8ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3686)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:14 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.2ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3687)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:14 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 0.7ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 3691)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:26 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.0ms | Allocations: 646)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 999)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 5158)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:26 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 0.7ms | Allocations: 378)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 467)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3701)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:27 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 0.9ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 3692)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:43 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 2.1ms | Allocations: 645)
+  Rendered links/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 992)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 5143)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:43 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.0ms | Allocations: 378)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 466)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3695)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:44 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.2ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 3692)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:44 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.0ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3685)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:50:44 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.0ms | Allocations: 372)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 459)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 3690)
+
+
+Started POST "/links" for ::1 at 2021-07-05 15:51:08 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"TUJkB3avA3RDjYdPxeWsHC2msUwoMsW4lYmcm30d8l0i/F+PRHATbZ2JUpT55kReGTk2rrM84lsWVHeXOVwtFA==", "link"=>{"original_url"=>"secure.docyt.com"}, "commit"=>"Create Link"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 685)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/links_controller.rb:16:in `create'
+Started POST "/links" for ::1 at 2021-07-05 15:51:46 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"TUJkB3avA3RDjYdPxeWsHC2msUwoMsW4lYmcm30d8l0i/F+PRHATbZ2JUpT55kReGTk2rrM84lsWVHeXOVwtFA==", "link"=>{"original_url"=>"secure.docyt.com"}, "commit"=>"Create Link"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Create (0.6ms)[0m  [1m[32mINSERT INTO "links" ("original_url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["original_url", "https://{\"original_url\"=>\"secure.docyt.com\"}"], ["created_at", "2021-07-05 19:51:46.305031"], ["updated_at", "2021-07-05 19:51:46.305031"]]
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Update (0.4ms)[0m  [1m[33mUPDATE "links" SET "short_url" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["short_url", "d"], ["updated_at", "2021-07-05 19:51:46.308795"], ["id", 3]]
+  ↳ app/models/link.rb:8:in `create_short_url'
+  [1m[35m (24.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 41ms (ActiveRecord: 27.8ms | Allocations: 8072)
+
+
+Started GET "/links" for ::1 at 2021-07-05 15:51:46 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [3 times] (Duration: 0.7ms | Allocations: 467)
+  Rendered links/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1628)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms | Allocations: 5165)
+
+
+Started GET "/links/d/info" for ::1 at 2021-07-05 15:51:55 -0400
+Processing by LinksController#show as HTML
+  Parameters: {"path"=>"d"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "d"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+  Rendering links/show.html.erb within layouts/application
+  Rendered links/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 256)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 4314)
+
+
+Started GET "/links/d" for ::1 at 2021-07-05 15:51:58 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"d"}
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "d"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+  [1m[36mLink Update (0.8ms)[0m  [1m[33mUPDATE "links" SET "ip_addresses" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["ip_addresses", "{::1}"], ["updated_at", "2021-07-05 19:51:58.886772"], ["id", 3]]
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+Redirected to https://{"original_url"=>"secure.docyt.com"}
+Completed 302 Found in 23ms (ActiveRecord: 14.7ms | Allocations: 3087)
+
+
+Started GET "/links/d" for ::1 at 2021-07-05 15:51:58 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"d"}
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "d"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+Redirected to https://{"original_url"=>"secure.docyt.com"}
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 982)
+
+
+Started GET "/links" for ::1 at 2021-07-05 15:53:15 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [3 times] (Duration: 0.6ms | Allocations: 334)
+  Rendered links/index.html.erb within layouts/application (Duration: 12.7ms | Allocations: 5112)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 4.7ms | Allocations: 8905)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:53:16 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.3ms | Allocations: 425)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 512)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3741)
+
+
+Started POST "/links" for ::1 at 2021-07-05 15:53:18 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"aIG/kuNcfT6KrxiWRdW9sIscEiIeDUvA2KmasLXSFKRYcGkRc9uLL29n2tweZZvFiyUtaPOW3VnZVgm6tVU6rg==", "link"=>{"original_url"=>"ffff"}, "commit"=>"Create Link"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:19:in `create'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("original_url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["original_url", "https://{\"original_url\"=>\"ffff\"}"], ["created_at", "2021-07-05 19:53:18.928224"], ["updated_at", "2021-07-05 19:53:18.928224"]]
+  ↳ app/controllers/links_controller.rb:19:in `create'
+  [1m[36mLink Update (0.4ms)[0m  [1m[33mUPDATE "links" SET "short_url" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["short_url", "e"], ["updated_at", "2021-07-05 19:53:18.932665"], ["id", 4]]
+  ↳ app/models/link.rb:8:in `create_short_url'
+  [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:19:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 38ms (ActiveRecord: 29.7ms | Allocations: 3776)
+
+
+Started GET "/links" for ::1 at 2021-07-05 15:53:18 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [4 times] (Duration: 0.7ms | Allocations: 428)
+  Rendered links/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1308)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms | Allocations: 4546)
+
+
+Started GET "/links" for ::1 at 2021-07-05 15:58:21 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [4 times] (Duration: 0.9ms | Allocations: 573)
+  Rendered links/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 5532)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.8ms | Allocations: 10096)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 15:58:23 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.9ms | Allocations: 812)
+  Rendered links/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1160)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 4532)
+
+
+Started POST "/links" for ::1 at 2021-07-05 15:58:28 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"MWp7iGhJV5SCKkVEIZ7hUYRoOEHa7781Q2tnWcaQhLwBm60L+M6hhWfihw56LsckhFEHCzd0KaxClPRTxheqtg==", "link"=>{"domain"=>"secure.docyt.com"}, "commit"=>"Create Link"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Create (0.6ms)[0m  [1m[32mINSERT INTO "links" ("original_url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["original_url", "https://{\"domain\"=>\"secure.docyt.com\"}"], ["created_at", "2021-07-05 19:58:28.176394"], ["updated_at", "2021-07-05 19:58:28.176394"]]
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Update (0.4ms)[0m  [1m[33mUPDATE "links" SET "short_url" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["short_url", "f"], ["updated_at", "2021-07-05 19:58:28.180464"], ["id", 5]]
+  ↳ app/models/link.rb:8:in `create_short_url'
+  [1m[35m (24.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 33ms (ActiveRecord: 25.3ms | Allocations: 3743)
+
+
+Started GET "/links" for ::1 at 2021-07-05 15:58:28 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [5 times] (Duration: 0.7ms | Allocations: 534)
+  Rendered links/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1428)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.2ms | Allocations: 4679)
+
+
+Started GET "/links" for ::1 at 2021-07-05 16:00:47 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [5 times] (Duration: 1.8ms | Allocations: 542)
+  Rendered links/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 5406)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 17.3ms | ActiveRecord: 4.5ms | Allocations: 9202)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 16:00:50 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 2.2ms | Allocations: 537)
+  Rendered links/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 624)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 3857)
+
+
+Started POST "/links" for ::1 at 2021-07-05 16:00:52 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"FAu309Z2bueU4SeEOidiDUgVB+sXLjbrh5oLfMzp3ygk+mFQRvGY9nEp5c5hl0R4SCw4ofq1oHKGZZh2zG7xIg==", "link"=>{"domain"=>"secure.docyt.com"}, "commit"=>"Create Link"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1205)
+
+
+  
+NoMethodError (undefined method `domain' for #<ActionController::Parameters:0x00007f9871249210>):
+  
+app/controllers/links_controller.rb:16:in `create'
+Started POST "/links" for ::1 at 2021-07-05 16:01:05 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"FAu309Z2bueU4SeEOidiDUgVB+sXLjbrh5oLfMzp3ygk+mFQRvGY9nEp5c5hl0R4SCw4ofq1oHKGZZh2zG7xIg==", "link"=>{"domain"=>"secure.docyt.com"}, "commit"=>"Create Link"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Create (0.5ms)[0m  [1m[32mINSERT INTO "links" ("original_url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["original_url", "https://secure.docyt.com"], ["created_at", "2021-07-05 20:01:05.391232"], ["updated_at", "2021-07-05 20:01:05.391232"]]
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Update (0.4ms)[0m  [1m[33mUPDATE "links" SET "short_url" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["short_url", "g"], ["updated_at", "2021-07-05 20:01:05.394356"], ["id", 6]]
+  ↳ app/models/link.rb:8:in `create_short_url'
+  [1m[35m (17.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 35ms (ActiveRecord: 22.2ms | Allocations: 8115)
+
+
+Started GET "/links" for ::1 at 2021-07-05 16:01:05 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [6 times] (Duration: 2.1ms | Allocations: 644)
+  Rendered links/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1560)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.4ms | Allocations: 4955)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 16:01:07 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.6ms | Allocations: 537)
+  Rendered links/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 624)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 3854)
+
+
+Started POST "/links" for ::1 at 2021-07-05 16:01:09 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"IWRV1RqaVRt9F1+sv0/T7Nl/OGm9yL0Z3aMp3USSq1sRlYNWih2jCpjfnebk//WZ2UYHI1BTK4DcXLrXRBWFUQ==", "link"=>{"domain"=>"secure.docyt.com"}, "commit"=>"Create Link"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Create (0.4ms)[0m  [1m[32mINSERT INTO "links" ("original_url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["original_url", "https://secure.docyt.com"], ["created_at", "2021-07-05 20:01:09.950251"], ["updated_at", "2021-07-05 20:01:09.950251"]]
+  ↳ app/controllers/links_controller.rb:17:in `create'
+  [1m[36mLink Update (0.3ms)[0m  [1m[33mUPDATE "links" SET "short_url" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["short_url", "h"], ["updated_at", "2021-07-05 20:01:09.953226"], ["id", 7]]
+  ↳ app/models/link.rb:8:in `create_short_url'
+  [1m[35m (43.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:17:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 50ms (ActiveRecord: 43.9ms | Allocations: 3690)
+
+
+Started GET "/links" for ::1 at 2021-07-05 16:01:10 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [7 times] (Duration: 1.4ms | Allocations: 740)
+  Rendered links/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1656)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.5ms | Allocations: 4902)
+
+
+Started GET "/links/h" for ::1 at 2021-07-05 16:01:13 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"h"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "h"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+  [1m[36mLink Update (0.5ms)[0m  [1m[33mUPDATE "links" SET "ip_addresses" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["ip_addresses", "{::1}"], ["updated_at", "2021-07-05 20:01:13.886936"], ["id", 7]]
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+Redirected to https://secure.docyt.com
+Completed 302 Found in 17ms (ActiveRecord: 9.0ms | Allocations: 3227)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/icons/icon-sprites/sprite.svg"):
+  
+actionpack (6.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.4) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.4) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/links/h" for ::1 at 2021-07-05 16:01:16 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"h"}
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "h"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+Redirected to https://secure.docyt.com
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms | Allocations: 4054)
+
+
+Started GET "/" for ::1 at 2021-07-05 16:01:35 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:12
+  Rendered collection of links/_link.html.erb [7 times] (Duration: 0.9ms | Allocations: 740)
+  Rendered links/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1654)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 4889)
+
+
+Started GET "/links/e" for ::1 at 2021-07-05 16:01:55 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"e"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "e"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+  [1m[36mLink Update (0.8ms)[0m  [1m[33mUPDATE "links" SET "ip_addresses" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["ip_addresses", "{::1}"], ["updated_at", "2021-07-05 20:01:55.370415"], ["id", 4]]
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:28:in `redirect'
+Redirected to https://{"original_url"=>"ffff"}
+Completed 302 Found in 21ms (ActiveRecord: 13.6ms | Allocations: 3084)
+
+
+Started GET "/links/e" for ::1 at 2021-07-05 16:01:55 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"e"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "e"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+Redirected to https://{"original_url"=>"ffff"}
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 985)
+
+
+Started GET "/links/h" for ::1 at 2021-07-05 16:01:59 -0400
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"h"}
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "h"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+Redirected to https://secure.docyt.com
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms | Allocations: 980)
+
+
+Started GET "/links/h" for ::1 at 2021-07-05 16:02:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/assets/icons/icon-sprites/sprite.svg"):
+  
+actionpack (6.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.4) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.4) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Processing by LinksController#redirect as HTML
+  Parameters: {"path"=>"h"}
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."short_url" = $1 LIMIT $2[0m  [["short_url", "h"], ["LIMIT", 1]]
+  ↳ app/controllers/links_controller.rb:47:in `link'
+Redirected to https://secure.docyt.com
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms | Allocations: 1982)
+
+
+Started GET "/links/new" for ::1 at 2021-07-05 16:02:34 -0400
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 1.7ms | Allocations: 380)
+  Rendered links/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 467)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3711)
+
+
